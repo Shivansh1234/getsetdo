@@ -1,0 +1,27 @@
+<div class="toolkitFB">
+    <div>
+        <h1>Edit Todo Progress</h1>
+        <mat-card>
+
+
+        </mat-card>
+    </div>
+    <mat-divider [vertical]="true"></mat-divider>
+    <div>
+        <h1>Edit Todo Categories</h1>
+        <mat-form-field class="example-chip-list" appearance="standard">
+            <mat-label>Todo Category</mat-label>
+            <mat-chip-list #chipList aria-label="Todo Category">
+                <mat-chip *ngFor="let x of metaTodo.todoCategory" (removed)="removeCategory(x)">
+                    {{x}}
+                    <button matChipRemove>
+                        <mat-icon>cancel</mat-icon>
+                    </button>
+                </mat-chip>
+                <input placeholder="New Todo Category..." [matChipInputFor]="chipList"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+                    (matChipInputTokenEnd)="addCategory($event)">
+            </mat-chip-list>
+        </mat-form-field>
+    </div>
+</div>

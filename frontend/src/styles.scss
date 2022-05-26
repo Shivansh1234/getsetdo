@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+// Global Failure Snackbar
+.failureSnackbar {
+    background-color: rgb(63, 4, 4);
+    color: white;
+}
+
+// Global Success Snackbar
+.successSnackbar {
+    background-color:darkgreen;
+    color: white;
+}
+
+
+// Hiding default password icon on MS browsers
+::-ms-reveal {
+    display: none;
+}

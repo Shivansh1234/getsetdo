@@ -1,0 +1,47 @@
+<div class="todoFB">
+    <mat-card class="matCard">
+
+        <form [formGroup]="addTodoForm" (ngSubmit)="addTodo()">
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Todo Name</mat-label>
+                    <input matInput formControlName="todoName">
+                    <mat-icon matSuffix class="material-icons-outlined">edit</mat-icon>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Choose Category</mat-label>
+                    <mat-select formControlName="todoType">
+                        <mat-option [disabled]=true>None</mat-option>
+                        <mat-option *ngFor="let x of todoCategoryList" [value]="x.name">
+                            {{x.name}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-icon matSuffix class="material-icons-outlined">science</mat-icon>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Todo Progress</mat-label>
+                    <input matInput formControlName="todoProgress">
+                    <mat-icon matSuffix class="material-icons-outlined">cached</mat-icon>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Todo Description</mat-label>
+                    <textarea matInput formControlName="todoDescription"></textarea>
+                    <mat-icon matSuffix class="material-icons-outlined">book</mat-icon>
+                </mat-form-field>
+            </p>
+
+            <p>
+                <button mat-stroked-button type="submit" [disabled]="!addTodoForm.valid">Add To Do</button>
+            </p>
+
+        </form>
+
+    </mat-card>
+
+</div>

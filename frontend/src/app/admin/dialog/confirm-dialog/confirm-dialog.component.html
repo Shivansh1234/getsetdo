@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>{{metaData.action}} {{metaData.name}}</h2>
+<mat-dialog-content>
+    <span>Are you sure want to {{metaData.action}} {{metaData.name}} - <strong>{{resultData.email}}</strong>?</span>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button (click)="cancel()">Cancel</button>
+    <button mat-button color="warn" (click)="confirm()">{{metaData.action}}</button>
+</mat-dialog-actions>

@@ -1,0 +1,26 @@
+<div class="addTodoFB">
+    <p>
+        <button mat-stroked-button routerLink="../add-todo" color="primary">
+            <mat-icon>add</mat-icon>
+            Add Todo
+        </button>
+    </p>
+</div>
+
+<mat-accordion>
+    <mat-expansion-panel class="matExpPan" hideToggle *ngFor="let t of todoList">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{t.todoName}}
+            </mat-panel-title>
+            <mat-panel-description>
+                {{t.createdAt | date: 'medium'}}
+                <span class="example-spacer"></span>
+                <button mat-icon-button color="warn" (click)="deleteUserTodo(t._id)">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>{{t.todoDescription}}</p>
+    </mat-expansion-panel>
+</mat-accordion>
